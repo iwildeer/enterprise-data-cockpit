@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "PangMenZhengDao";
+  src: url("../assets/fonts/PangMenZhengDao.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YouShe";
+  src: url("../assets/fonts/YouShe.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("../assets/fonts/Oswald.ttf") format("truetype");
+  font-display: swap;
+}

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/*
+ * 遗留页是用 Tailwind v3.4 Play CDN 写的，其中 `perspective-normal`
+ * 在 v3.4 里并不存在（无效类）。v4 把 perspective 做成了真工具类，
+ * 若不禁用会让原本不生效的地方突然生效，造成视觉回归。
+ */
+@theme {
+  --perspective-*: initial;
+}
+
+@theme {
+  --font-PangMenZhengDao: "PangMenZhengDao", sans-serif;
+  --font-YouShe: "YouShe", sans-serif;
+  --font-Oswald: "Oswald", sans-serif;
+}
+
+/*
+ * v4 没有 backgroundImage 主题命名空间，旧的 bg-* token 全部改为
+ * @utility 自定义工具类。类名与 tailwindConfig.js 中保持一致，
+ * 旧页面 markup 无需改动。
+ */
+@utility bg-title { background-image: url("../assets/images/title.png"); }
+@utility bg-d1 { background-image: url("../assets/images/d1.png"); }
+@utility bg-kv-a1 { background-image: url("../assets/images/kv-a1.png"); }
+@utility bg-title2 { background-image: url("../assets/images/partyComstruct/title2.png"); }
+@utility bg-huiguang { background-image: url("../assets/images/partyComstruct/huiguang.png"); }
+@utility bg-1png { background-image: url("../assets/images/partyComstruct/1.png"); }
+@utility bg-2png { background-image: url("../assets/images/partyComstruct/2.png"); }
+@utility bg-3png { background-image: url("../assets/images/partyComstruct/3.png"); }
+@utility bg-4png { background-image: url("../assets/images/partyComstruct/4.png"); }
+@utility bg-r1png { background-image: url("../assets/images/partyComstruct/r1.png"); }
+@utility bg-r2png { background-image: url("../assets/images/partyComstruct/r2.png"); }
+@utility bg-r3png { background-image: url("../assets/images/partyComstruct/r3.png"); }
+@utility bg-r4png { background-image: url("../assets/images/partyComstruct/r4.png"); }
+@utility bg-kvShield { background-image: url("../assets/images/kv-shield.png"); }
+@utility bg-jingNei { background-image: url("../assets/images/main/2/jingNei.png"); }
+@utility bg-jingWai { background-image: url("../assets/images/main/2/jingWai.png"); }
+@utility bg-touRuBG { background-image: url("../assets/images/main/2/touRuBG.png"); }
+@utility bg-tzdcfx { background-image: url("../assets/images/main/2/tzdcfx.png"); }
+@utility bg-tzdcfx1 { background-image: url("../assets/images/main/2/tzdcfx1.png"); }
+@utility bg-tzdcfx2 { background-image: url("../assets/images/main/2/tzdcfx2.png"); }
+@utility bg-tzdcfx3 { background-image: url("../assets/images/main/2/tzdcfx3.png"); }
+@utility bg-k1 { background-image: url("../assets/images/main/1/k1.png"); }
+@utility bg-k2 { background-image: url("../assets/images/main/1/k2.png"); }
+@utility bg-bgIcon1 { background-image: url("../assets/images/main/4/icon1.png"); }
+@utility bg-bgIcon2 { background-image: url("../assets/images/main/4/icon2.png"); }
+@utility bg-bgIcon3 { background-image: url("../assets/images/main/4/icon3.png"); }
+@utility bg-bgIcon4 { background-image: url("../assets/images/main/4/icon4.png"); }
+@utility bg-xydb { background-image: url("../assets/images/main/4/xydb.png"); }
+@utility bg-xydbBG { background-image: url("../assets/images/main/4/xydbBG.png"); }
+@utility bg-bxydbBG { background-image: url("../assets/images/main/4/bxydbBG.png"); }
+@utility bg-bxydb { background-image: url("../assets/images/main/4/bxydb.png"); }
+@utility bg-dddtIcon1 { background-image: url("../assets/images/main/5/dddtIcon1.png"); }
+@utility bg-dddtIcon2 { background-image: url("../assets/images/main/5/dddtIcon2.png"); }
+@utility bg-dddtIcon3 { background-image: url("../assets/images/main/5/dddtIcon3.png"); }
+@utility bg-dddtBG { background-image: url("../assets/images/main/5/dddtBG.png"); }
+@utility bg-dk { background-image: url("../assets/images/main/5/dk.png"); }
+@utility bg-dxzh { background-image: url("../assets/images/main/5/dxzh.png"); }
+@utility bg-zbdydh { background-image: url("../assets/images/main/5/zbdydh.png"); }
+@utility bg-zbwyh { background-image: url("../assets/images/main/5/zbwyh.png"); }
+@utility bg-hyyjfxBG1 { background-image: url("../assets/images/main/6/hyyjfxBG1.png"); }
+@utility bg-hyyjfxBG2 { background-image: url("../assets/images/main/6/hyyjfxBG2.png"); }
+@utility bg-hyyjfxBG3 { background-image: url("../assets/images/main/6/hyyjfxBG3.png"); }
+@utility bg-cwnlyjBG { background-image: url("../assets/images/main/6/cwnlyjBG.png"); }
+@utility bg-zqchBG2 { background-image: url("../assets/images/main/6/zqchBG2.png"); }
+@utility bg-zqchBG1 { background-image: url("../assets/images/main/6/zqchBG1.png"); }
