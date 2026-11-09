@@ -1,7 +1,12 @@
-/* 全局基础样式，来自各旧页面 <head> 里的公共 reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  user-select: none;
+/* 全局基础样式，来自各旧页面 <head> 里的公共 reset。
+   必须放进 @layer base：v4 用原生级联层，未分层的样式会压过
+   @layer utilities 里的全部工具类（px、mt 等间距类会集体失效）。
+   旧站没这个问题，是因为旧 reset 靠 * 的低优先级自然输给类选择器。 */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+  }
 }

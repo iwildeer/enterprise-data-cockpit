@@ -134,8 +134,8 @@ export default function EconomyPage() {
             </div>
             <div className={s.rankListInfo}>
               <div className={s.rankListInfoL}>
-                {RANK_ICONS.map(({ viewBox, Icon }) => (
-                  <svg key={viewBox} xmlns="http://www.w3.org/2000/svg" viewBox={viewBox}>
+                {RANK_ICONS.map(({ viewBox, Icon }, i) => (
+                  <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox={viewBox}>
                     <Icon />
                   </svg>
                 ))}
