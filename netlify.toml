@@ -1,0 +1,56 @@
+# Netlify 部署配置（React SPA，2000px 大屏）
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# 旧静态页 301 到新路由（/index.html 由 Netlify pretty-URL 之外再兜一层）
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/PartyBuildingManagement.html"
+  to = "/party-building"
+  status = 301
+
+[[redirects]]
+  from = "/InvestmentManager.html"
+  to = "/investment"
+  status = 301
+
+[[redirects]]
+  from = "/overviewOfAssets.html"
+  to = "/overview-of-assets"
+  status = 301
+
+[[redirects]]
+  from = "/riskWarning.html"
+  to = "/risk-warning"
+  status = 301
+
+[[redirects]]
+  from = "/tripleAndOneBig.html"
+  to = "/triple-one"
+  status = 301
+
+# 帧序列与视频：文件名内容不变，永久缓存
+# （重新生成序列时换新目录名，如 /seq/economy-v2/，避免缓存滞留）
+[[headers]]
+  for = "/seq/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# SPA fallback 必须放在最后
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
