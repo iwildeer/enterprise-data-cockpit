@@ -1,0 +1,48 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/PartyBuildingManagement.html",
+      "destination": "/party-building",
+      "statusCode": 301
+    },
+    {
+      "source": "/InvestmentManager.html",
+      "destination": "/investment",
+      "statusCode": 301
+    },
+    {
+      "source": "/overviewOfAssets.html",
+      "destination": "/overview-of-assets",
+      "statusCode": 301
+    },
+    {
+      "source": "/riskWarning.html",
+      "destination": "/risk-warning",
+      "statusCode": 301
+    },
+    {
+      "source": "/tripleAndOneBig.html",
+      "destination": "/triple-one",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/seq/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
