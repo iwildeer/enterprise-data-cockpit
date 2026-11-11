@@ -1,6 +1,7 @@
 import { DashboardShell } from "../components/DashboardShell"
 import { EChart } from "../components/EChart"
-import { Globe3D } from "../components/Globe3D"
+import { GlChart } from "../components/GlChart"
+import { Globe3DLazy } from "../components/Globe3DLazy"
 import { VideoBackground } from "../components/VideoBackground"
 import { EnterpriseIcon, FinanceRoundedIcon, HostRoundedIcon } from "../components/icons"
 import { buildCubeBarOption } from "../charts/cubeBar"
@@ -108,7 +109,7 @@ export default function OverviewPage() {
             </div>
             <div className="inline-flex text-[#f1f1f1] h-50 w-127.5">
               <div id="3d-Pie" className="w-45 h-45">
-                <EChart option={buildPie3dOption()} />
+                <GlChart option={buildPie3dOption()} />
               </div>
               <div className="px-4.5 py-6.5 w-82.5 h-50 text-[16px]">
                 {BANK_ROWS.map((row) => (
@@ -131,7 +132,7 @@ export default function OverviewPage() {
           <div className="w-150 h-150 absolute left-1/2 top-12.5 -translate-x-75">
             {/* 3d地图 */}
             <div id="3d-globe" className="w-150 h-150">
-              <Globe3D />
+              <Globe3DLazy />
             </div>
           </div>
 

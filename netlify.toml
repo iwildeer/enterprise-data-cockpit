@@ -37,6 +37,19 @@
   to = "/triple-one"
   status = 301
 
+# 默认（含入口 HTML）：每次回源校验，确保拿到最新的 hash 资源名。
+# 放在具体的缓存规则之前，让下方的 /assets /seq /media 覆盖它。
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Vite 产物：文件名带内容 hash，变更即换名，可永久缓存
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # 帧序列与视频：文件名内容不变，永久缓存
 # （重新生成序列时换新目录名，如 /seq/economy-v2/，避免缓存滞留）
 [[headers]]

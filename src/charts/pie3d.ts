@@ -1,5 +1,8 @@
 import type { EChartsCoreOption } from "echarts"
-import "echarts-gl"
+
+// echarts-gl 不在此静态引入：option 构建不需要它，渲染时才需要其
+// 注册副作用。需要渲染 pie3d 的容器请用 <GlChart>（内部经
+// lib/echartsGl 异步加载 GL chunk，避免 633KB 库阻塞页面首绘）。
 
 interface PieDatum {
   name: string

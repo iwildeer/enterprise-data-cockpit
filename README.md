@@ -36,6 +36,17 @@ npm run preview  # 预览构建产物
 - 颜色：`text-white`、`bg-black/30`；圆角：`rounded-full`
 - 无 canonical 等价才保留 arbitrary：`text-[24px]`（v4 字号无数值刻度）、色板外颜色（大屏配色 `#f1f1f1` 等）、`w-[15%]` / `mt-[50%]`、`bg-[center_bottom_10px]`
 
+## 加载策略
+
+线上曾出现主体区域加载慢、3D 地球白屏，当前按以下策略加载（改动时请保持）：
+
+- **路由级代码分割**：六个页面全部 `React.lazy`，首屏只下载当前页 chunk；`echarts` 核心约 1.1MB 是全页共享 chunk。
+- **echarts-gl（含 three.js，~628KB）永不进关键路径**：`Globe3D` 经 `Globe3DLazy` 懒加载，pie3d 经 `GlChart` 门控（`lib/echartsGl.ts` 缓存同一个动态 import），GL chunk 到位前先渲染等尺寸占位。
+- **地球纹理**：`baseImg.webp`（450KB，原 PNG 2.4MB）、`scanImg.png`（62KB，已预缩放到等值线采样分辨率 512×256，Globe3D 里不再在线缩放）。
+- **帧序列动画**（`FrameAnimation`）：不开局全量预载（单页序列达 51MB，会拖垮首屏），改为起步 24 帧 + 播放点前方 72 帧滚动缓冲；循环回放命中 HTTP 缓存（`/seq/*` 已配 immutable）。
+- **背景视频**（`VideoBackground`，BG_26.mp4 达 4.5MB）延迟到 `window load` 之后才开始加载。
+- **缓存**：`/assets/*`（文件名带 hash）、`/seq/*`、`/media/*` 永久缓存；入口 HTML 每次回源校验（见 `netlify.toml` / `vercel.json`）。
+
 ## 资源维护脚本
 
 大屏文案与帧动画是硬编码的，改动后需重跑对应脚本：

@@ -1,6 +1,6 @@
 import { DashboardShell } from "../components/DashboardShell"
 import { EChart } from "../components/EChart"
-import { Globe3D } from "../components/Globe3D"
+import { Globe3DLazy } from "../components/Globe3DLazy"
 import { VideoBackground } from "../components/VideoBackground"
 import { DataIcon, SmileOutlineIcon } from "../components/icons"
 import { buildCircularProOption } from "../charts/circularPro"
@@ -161,7 +161,7 @@ export default function InvestmentPage() {
           <div className="w-150 h-150 absolute z-10 left-1/2 top-12.5 -translate-x-75">
             {/* 3d地图 */}
             <div id="3d-globe" className="w-150 h-150">
-              <Globe3D />
+              <Globe3DLazy />
             </div>
           </div>
 

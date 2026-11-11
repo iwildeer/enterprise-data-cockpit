@@ -1,5 +1,6 @@
 import { DashboardShell } from "../components/DashboardShell"
 import { EChart } from "../components/EChart"
+import { GlChart } from "../components/GlChart"
 import { FrameAnimation } from "../components/FrameAnimation"
 import { VideoBackground } from "../components/VideoBackground"
 import { EnterpriseIcon, FinanceRoundedIcon, HostRoundedIcon } from "../components/icons"
@@ -77,7 +78,7 @@ export default function EconomyPage() {
             <div className={s.titleL}>银行账户分布</div>
             <div className={s.leftContent}>
               <div className="h-45 w-45">
-                <EChart option={buildPie3dOption()} />
+                <GlChart option={buildPie3dOption()} />
               </div>
               <div className={s.leftContentR}>
                 {BANK_ROWS.map((row, i) => (

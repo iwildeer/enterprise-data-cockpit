@@ -2,7 +2,7 @@ import type { CSSProperties } from "react"
 import type { EChartsCoreOption } from "echarts"
 import { useECharts } from "../hooks/useECharts"
 
-interface EChartProps {
+export interface EChartProps {
   option: EChartsCoreOption
   className?: string
   style?: CSSProperties
