@@ -6,6 +6,7 @@ import EconomyPage from "./pages/EconomyPage"
 import InvestmentPage from "./pages/InvestmentPage"
 import OverviewPage from "./pages/OverviewPage"
 import RiskPage from "./pages/RiskPage"
+import TripleOnePage from "./pages/TripleOnePage"
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/investment" element={<InvestmentPage />} />
       <Route path="/overview-of-assets" element={<OverviewPage />} />
       <Route path="/risk-warning" element={<RiskPage />} />
+      <Route path="/triple-one" element={<TripleOnePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
