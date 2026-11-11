@@ -25,7 +25,7 @@ export function SiteHeader() {
           </span>
         ))}
       </div>
-      <div className="h-15 leading-[60px] text-[40px] text-[#ddf7ff]">
+      <div className="h-15 leading-15 text-[40px] text-[#ddf7ff]">
         数字企业大数据监管平台
       </div>
       <div className="inline-flex justify-between w-127.5 text-[26px] py-1.5 px-7.5 text-[#4e769f]">

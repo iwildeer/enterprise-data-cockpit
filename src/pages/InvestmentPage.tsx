@@ -35,7 +35,7 @@ export default function InvestmentPage() {
         <div className="w-127.5 h-187.5">
           {/* 投资情况 */}
           <div className="w-127.5 h-112.5">
-            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-15">
               投资情况
             </div>
             <div className="w-127.5 h-97.5 px-10 text-[16px]">
@@ -109,13 +109,13 @@ export default function InvestmentPage() {
 
           {/* 投资领域分布 */}
           <div className="w-127.5 h-75 pl-10">
-            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-15">
               投资领域分布
             </div>
             <div className="h-60 inline-flex text-[#f1f1f1]">
               <div className="w-72.5 h-60">
                 <div className="w-70 h-60 relative">
-                  <div className="absolute right-0 z-10 w-45 h-10 leading-[40px]">
+                  <div className="absolute right-0 z-10 w-45 h-10 leading-10">
                     <svg className="text-[#6abff8] w-6 h-6 inline-block" viewBox="0 0 24 24">
                       <DataIcon />
                     </svg>
@@ -130,7 +130,7 @@ export default function InvestmentPage() {
 
               <div className="w-102.5 h-60 pt-17.5">
                 {ONGOING_ROWS.map((row) => (
-                  <div key={row.pct} className="w-102.5 h-12.5 leading-[50px] text-[16px] inline-flex">
+                  <div key={row.pct} className="w-102.5 h-12.5 leading-12.5 text-[16px] inline-flex">
                     <div>
                       <span>在建</span>{" "}
                       <b className="font-Oswald font-normal" style={{ color: row.color }}>
@@ -182,7 +182,7 @@ export default function InvestmentPage() {
           {RND_LABELS.map(({ className, top, left }, i) => (
             <div
               key={i}
-              className={`absolute ${className} w-62.5 h-20 bg-kv-a1 bg-no-repeat bg-cover font-PangMenZhengDao text-center leading-[80px]`}
+              className={`absolute ${className} w-62.5 h-20 bg-kv-a1 bg-no-repeat bg-cover font-PangMenZhengDao text-center leading-20`}
               style={{ top, left }}
             >
               研发投入
@@ -195,7 +195,7 @@ export default function InvestmentPage() {
         <div className="w-127.5 h-187.5">
           {/* 投资规模趋势 */}
           <div className="w-127.5 h-112.5">
-            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
+            <div className="relative indent-60 leading-12 w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -217,14 +217,14 @@ export default function InvestmentPage() {
                   计划投入资金
                   <span className="w-12.5 text-right text-[24px] font-Oswald text-[#d4c92b]">903.12</span>亿元
                 </div>
-                <div className="text-[16px] text-[#f1f1f1] h-17.5 leading-[70px]">
+                <div className="text-[16px] text-[#f1f1f1] h-17.5 leading-17.5">
                   <svg className="inline-block w-6 h-6 mr-1.5 text-[#6de9ed]" viewBox="0 0 24 24">
                     <DataIcon />
                   </svg>
                   实际投入资金
                   <span className="w-12.5 text-right text-[24px] font-Oswald text-[#6de9ed]">1,425.60</span>亿元
                 </div>
-                <div className="text-[16px] text-[#f1f1f1] h-17.5 leading-[70px]">
+                <div className="text-[16px] text-[#f1f1f1] h-17.5 leading-17.5">
                   <svg className="inline-block w-6 h-6 mr-1.5 text-[#226bbe]" viewBox="0 0 24 24">
                     <SmileOutlineIcon />
                   </svg>
@@ -244,7 +244,7 @@ export default function InvestmentPage() {
 
           {/* 投资项目完成图 */}
           <div className="w-127.5 h-87.5">
-            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
+            <div className="relative indent-60 leading-12 w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"

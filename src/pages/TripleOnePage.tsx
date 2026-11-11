@@ -75,7 +75,7 @@ export default function TripleOnePage() {
         <div className="w-125 h-187.5 pl-5">
           {/* 重大会议分析 */}
           <div className="h-90">
-            <div className="h-15 relative leading-[40px] indent-30">
+            <div className="h-15 relative leading-10 indent-30">
               <img className="absolute inset-0" src={titleImg} alt="" />
               <span className="font-PangMenZhengDao text-[22px]">重大会议分析</span>
             </div>
@@ -94,7 +94,7 @@ export default function TripleOnePage() {
 
           {/* 事项统计情况 */}
           <div className="h-97.5">
-            <div className="h-15 relative leading-[40px] indent-30">
+            <div className="h-15 relative leading-10 indent-30">
               <img className="absolute inset-0" src={titleImg} alt="" />
               <span className="font-PangMenZhengDao text-[22px]">事项统计情况</span>
             </div>
@@ -104,7 +104,7 @@ export default function TripleOnePage() {
               </div>
               <ul className="absolute pt-9 right-3.5 text-[#f1f1f1] text-[16px] justify-around h-full">
                 {EVENT_COUNTS.map((count, i) => (
-                  <li key={i} className="h-10 leading-[40px]">
+                  <li key={i} className="h-10 leading-10">
                     {count} &nbsp; {EVENT_TIMES[i]}
                   </li>
                 ))}
@@ -119,10 +119,10 @@ export default function TripleOnePage() {
             {BOTTOM_CARDS.map((bg) => (
               <div key={bg} className={`flex-1 flex items-center w-57 h-27.5 ${bg} bg-no-repeat bg-cover`}>
                 <div className="ml-22.5">
-                  <div className="h-11.25 leading-[60px]">
+                  <div className="h-11.25 leading-15">
                     <span className="font-Oswald text-[24px]">1,438</span>项 &nbsp; 27%
                   </div>
-                  <p className="font-PangMenZhengDao pt-2.5 h-13.75 leading-[55px]">会议统计</p>
+                  <p className="font-PangMenZhengDao pt-2.5 h-13.75 leading-13.75">会议统计</p>
                 </div>
               </div>
             ))}
@@ -133,7 +133,7 @@ export default function TripleOnePage() {
         <div className="w-125 h-187.5 pr-5">
           {/* 议题统计情况 */}
           <div className="h-82.5">
-            <div className="h-15 relative leading-[40px] text-right">
+            <div className="h-15 relative leading-10 text-right">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -146,7 +146,7 @@ export default function TripleOnePage() {
               {TOPIC_ROWS.map(({ bg, numColor, label, cells }) => (
                 <div key={label} className="h-33.75 inline-flex">
                   <div className={`w-30 h-30 mr-5 text-center ${bg} bg-contain bg-no-repeat`}>
-                    <p className="mt-12.5 h-7.5 leading-[30px] text-[24px] font-Oswald" style={{ color: numColor }}>
+                    <p className="mt-12.5 h-7.5 leading-7.5 text-[24px] font-Oswald" style={{ color: numColor }}>
                       1009
                     </p>
                   </div>
@@ -155,8 +155,8 @@ export default function TripleOnePage() {
                     <div className="flex justify-around gap-4">
                       {cells.map(({ name, num, color }) => (
                         <div key={name} className="w-25 h-22.5 bg-xydbBG bg-no-repeat bg-contain text-center">
-                          <p className="h-10 leading-[40px]">{name}</p>
-                          <p className="h-12.5 leading-[50px] font-Oswald text-[24px]" style={{ color }}>
+                          <p className="h-10 leading-10">{name}</p>
+                          <p className="h-12.5 leading-12.5 font-Oswald text-[24px]" style={{ color }}>
                             {num}
                           </p>
                         </div>
@@ -170,7 +170,7 @@ export default function TripleOnePage() {
 
           {/* 法律审核情况 */}
           <div className="h-55">
-            <div className="h-15 relative leading-[40px] text-right">
+            <div className="h-15 relative leading-10 text-right">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -204,7 +204,7 @@ export default function TripleOnePage() {
 
           {/* 指标异常 */}
           <div className="h-50">
-            <div className="h-15 relative leading-[40px] text-right">
+            <div className="h-15 relative leading-10 text-right">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -217,7 +217,7 @@ export default function TripleOnePage() {
               <ul className="w-120 h-35 flex justify-around items-center">
                 {ANOMALIES.map(({ num, label }) => (
                   <li key={label} className="text-center flex-1">
-                    <div className="font-Oswald text-[#cec122] text-[20px] w-12.5 h-12.5 leading-[50px] rounded-full border border-red-100">
+                    <div className="font-Oswald text-[#cec122] text-[20px] w-12.5 h-12.5 leading-12.5 rounded-full border border-red-100">
                       {num}
                     </div>
                     <div className="h-10"></div>

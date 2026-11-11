@@ -85,7 +85,7 @@ const NEWS_ROWS = [
 function PanelTitle({ label, flip = false }: { label: string; flip?: boolean }) {
   if (flip) {
     return (
-      <div className="h-15 text-[#f1f1f1] leading-[45px] indent-70">
+      <div className="h-15 text-[#f1f1f1] leading-11.25 indent-70">
         <img
           className="absolute"
           style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
@@ -97,7 +97,7 @@ function PanelTitle({ label, flip = false }: { label: string; flip?: boolean }) 
     )
   }
   return (
-    <div className="relative h-15 leading-[50px]">
+    <div className="relative h-15 leading-12.5">
       <img className="absolute top-0 left-0 h-15" src={titleImg} alt="" />
       <span className="font-PangMenZhengDao ml-30">{label}</span>
     </div>
@@ -122,7 +122,7 @@ export default function PartyPage() {
                   {ORG_ROWS.map((row) => (
                     <div
                       key={row.label}
-                      className={`text-[16px] h-7.5 mb-2.5 indent-5 ${row.icon} bg-no-repeat bg-contain leading-[30px]`}
+                      className={`text-[16px] h-7.5 mb-2.5 indent-5 ${row.icon} bg-no-repeat bg-contain leading-7.5`}
                     >
                       <span className="text-[24px] font-Oswald" style={{ color: row.color }}>
                         {row.count}
@@ -223,7 +223,7 @@ export default function PartyPage() {
                 {NEWS_ROWS.map((row, i) => (
                   <div
                     key={i}
-                    className="bg-dddtBG bg-no-repeat bg-cover w-125 text-[16px] text-[#f1f1f1] h-15 leading-[60px] inline-flex"
+                    className="bg-dddtBG bg-no-repeat bg-cover w-125 text-[16px] text-[#f1f1f1] h-15 leading-15 inline-flex"
                   >
                     <b
                       className={`text-[18px] w-30 text-[#e46262] ${row.icon} indent-9.5 bg-auto bg-no-repeat bg-center`}

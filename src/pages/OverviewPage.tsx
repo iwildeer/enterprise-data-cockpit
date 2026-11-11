@@ -75,7 +75,7 @@ export default function OverviewPage() {
         <div className="w-127.5 h-187.5">
           {/* 企业总数 */}
           <div className="w-127.5 h-62.5">
-            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-15">
               企业总数
             </div>
             <div className="w-127.5 h-47.5 px-10 inline-flex justify-between">
@@ -93,7 +93,7 @@ export default function OverviewPage() {
 
           {/* 收入分析（与经济运行页的总资产周转率为同一图表） */}
           <div className="w-127.5 h-62.5">
-            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-15">
               收入分析
             </div>
             <div id="turnoverRate-graph" className="w-127.5 h-50">
@@ -103,7 +103,7 @@ export default function OverviewPage() {
 
           {/* 资金分布 */}
           <div className="w-127.5 h-62.5">
-            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-15">
               资金分布
             </div>
             <div className="inline-flex text-[#f1f1f1] h-50 w-127.5">
@@ -112,7 +112,7 @@ export default function OverviewPage() {
               </div>
               <div className="px-4.5 py-6.5 w-82.5 h-50 text-[16px]">
                 {BANK_ROWS.map((row) => (
-                  <p key={row.name} className="float-left w-1/2 h-12.5 leading-[50px] text-[16px]">
+                  <p key={row.name} className="float-left w-1/2 h-12.5 leading-12.5 text-[16px]">
                     {row.name}&nbsp;<b>{row.pct}</b>
                     <sub>%</sub>
                     {row.tight ? null : " "}
@@ -172,7 +172,7 @@ export default function OverviewPage() {
                 >
                   <img className="absolute top-4.5 left-6.5 z-1" src={img} alt="" />
                   <img className="absolute" src={d1} alt="" />
-                  <p className="absolute z-1 font-PangMenZhengDao text-[#f1f1f1] leading-[65px] indent-19.5 w-56.25 h-17.5">
+                  <p className="absolute z-1 font-PangMenZhengDao text-[#f1f1f1] leading-16.25 indent-19.5 w-56.25 h-17.5">
                     {label}
                     {" "}
                     <span className="text-[20px] font-Oswald">{num}</span>
@@ -189,7 +189,7 @@ export default function OverviewPage() {
                 >
                   <img className="absolute rotate-180" src={d1} alt="" />
                   <img className="absolute top-6 right-6.5 z-1" src={img} alt="" />
-                  <p className="absolute z-1 font-PangMenZhengDao text-[#f1f1f1] leading-[65px] indent-5 w-56.25 h-17.5">
+                  <p className="absolute z-1 font-PangMenZhengDao text-[#f1f1f1] leading-16.25 indent-5 w-56.25 h-17.5">
                     {label}
                     {" "}
                     <span className="text-[20px] font-Oswald">{num}</span>
@@ -212,7 +212,7 @@ export default function OverviewPage() {
         <div className="w-127.5 h-187.5">
           {/* 投资规模趋势 */}
           <div className="w-127.5 h-75">
-            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
+            <div className="relative indent-60 leading-12 w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -229,7 +229,7 @@ export default function OverviewPage() {
 
           {/* 投资项目进展 */}
           <div className="w-127.5 h-50 text-[#f1f1f1]">
-            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
+            <div className="relative indent-60 leading-12 w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -245,7 +245,7 @@ export default function OverviewPage() {
 
           {/* 行业资产TOP3 */}
           <div className="w-127.5 h-62.5">
-            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
+            <div className="relative indent-60 leading-12 w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
                 className="absolute inset-0"
@@ -283,7 +283,7 @@ export default function OverviewPage() {
               {/* 右边数据 */}
               <div className="absolute right-15 h-47.5">
                 {TOP3_ROWS.map(({ color, value }) => (
-                  <div key={value} className="h-13.75 leading-[55px] text-end">
+                  <div key={value} className="h-13.75 leading-13.75 text-end">
                     <span className="text-[26px] font-Oswald mr-0.75" style={{ color }}>
                       {value}
                     </span>
