@@ -42,28 +42,28 @@ const CENTER_RIGHT = [
 /** 党员结构：4 个绝对定位的标签 */
 const STRUCTURE_LABELS = [
   {
-    pos: "top-[30px] left-[120px]",
+    pos: "top-7.5 left-30",
     color: "#e9da63",
     name: "群众",
     a: "23%",
     b: "855人",
   },
   {
-    pos: "top-[155px] left-[80px]",
+    pos: "top-38.75 left-20",
     color: "#5dc6cd",
     name: "无党派人士",
     a: "11%",
     b: "204人",
   },
   {
-    pos: "right-[70px] top-[10px]",
+    pos: "right-17.5 top-2.5",
     color: "#1c5795",
     name: "共产党员",
     a: "3601人",
     b: "37%",
   },
   {
-    pos: "right-[140px] bottom-[130px]",
+    pos: "right-35 bottom-32.5",
     color: "#65ba8f",
     name: "共青团员",
     a: "983人",
@@ -85,7 +85,7 @@ const NEWS_ROWS = [
 function PanelTitle({ label, flip = false }: { label: string; flip?: boolean }) {
   if (flip) {
     return (
-      <div className="h-[60px] text-[#f1f1f1] leading-[45px] indent-[280px]">
+      <div className="h-15 text-[#f1f1f1] leading-[45px] indent-70">
         <img
           className="absolute"
           style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
@@ -97,9 +97,9 @@ function PanelTitle({ label, flip = false }: { label: string; flip?: boolean }) 
     )
   }
   return (
-    <div className="relative h-[60px] leading-[50px]">
-      <img className="absolute top-0 left-0 h-[60px]" src={titleImg} alt="" />
-      <span className="font-PangMenZhengDao ml-[120px]">{label}</span>
+    <div className="relative h-15 leading-[50px]">
+      <img className="absolute top-0 left-0 h-15" src={titleImg} alt="" />
+      <span className="font-PangMenZhengDao ml-30">{label}</span>
     </div>
   )
 }
@@ -109,26 +109,26 @@ export default function PartyPage() {
   return (
     <DashboardShell stageHeight={850}>
       {/* 主体内容区域 */}
-      <div className="w-[2000px] h-[800px] top-0 left-0 absolute z-20">
-        <div className="relative w-[2000px] h-[800px] inline-flex">
+      <div className="w-500 h-200 top-0 left-0 absolute z-20">
+        <div className="relative w-500 h-200 inline-flex">
           {/* 左侧区域 */}
-          <div className="w-[490px] h-[800px] text-[#f1f1f1]">
-            <div className="w-[490px] h-[280px]">
+          <div className="w-122.5 h-200 text-[#f1f1f1]">
+            <div className="w-122.5 h-70">
               <PanelTitle label="党组织数量" />
-              <div className="pl-[30px] w-full h-[220px] inline-flex items-center">
+              <div className="pl-7.5 w-full h-55 inline-flex items-center">
                 {/* 圆锥图 */}
-                <img className="w-[120px] h-[160px]" src={coneImg} alt="" />
-                <div className="ml-[46px] mt-[-10px]">
+                <img className="w-30 h-40" src={coneImg} alt="" />
+                <div className="ml-11.5 -mt-2.5">
                   {ORG_ROWS.map((row) => (
                     <div
                       key={row.label}
-                      className={`text-[16px] h-[30px] mb-[10px] indent-[20px] ${row.icon} bg-no-repeat bg-contain leading-[30px]`}
+                      className={`text-[16px] h-7.5 mb-2.5 indent-5 ${row.icon} bg-no-repeat bg-contain leading-[30px]`}
                     >
                       <span className="text-[24px] font-Oswald" style={{ color: row.color }}>
                         {row.count}
                       </span>
                       <span style={{ color: row.color }}>个</span>{" "}
-                      <span className="mx-[14px]">{row.pct}</span>{" "}
+                      <span className="mx-3.5">{row.pct}</span>{" "}
                       <span className="text-[#999]">{row.label}</span>
                     </div>
                   ))}
@@ -136,16 +136,16 @@ export default function PartyPage() {
               </div>
             </div>
 
-            <div className="w-[490px] h-[520px]">
+            <div className="w-122.5 h-130">
               <PanelTitle label="党建活动" />
-              <div className="pl-[30px] w-full h-[460px]">
-                <div className="w-[490px] h-[200px] flex justify-between flex-wrap">
+              <div className="pl-7.5 w-full h-115">
+                <div className="w-122.5 h-50 flex justify-between flex-wrap">
                   {ACTIVITY_CARDS.map((card) => (
                     <div
                       key={card.label}
-                      className={`w-[245px] h-[100px] inline-flex items-center ${card.icon} bg-no-repeat bg-contain`}
+                      className={`w-61.25 h-25 inline-flex items-center ${card.icon} bg-no-repeat bg-contain`}
                     >
-                      <div className="ml-[94px] mb-[20px] text-[18px]">
+                      <div className="ml-23.5 mb-5 text-[18px]">
                         <p>
                           <span className="font-Oswald text-[24px]">{card.count}</span> &nbsp;个
                         </p>
@@ -155,9 +155,9 @@ export default function PartyPage() {
                   ))}
                 </div>
 
-                <div className="w-[490px] h-[260px]">
+                <div className="w-122.5 h-65">
                   {/* 会议统计 */}
-                  <div className="w-[490px] h-[260px]">
+                  <div className="w-122.5 h-65">
                     <EChart option={buildSessionCountOption()} />
                   </div>
                 </div>
@@ -166,31 +166,31 @@ export default function PartyPage() {
           </div>
 
           {/* 中间区域 */}
-          <div className="w-[1020px] h-[800px] relative">
-            <div className="w-[1020px] h-[715px] bg-huiguang bg-cover flex justify-between bg-no-repeat">
-              <div className="w-[280px] h-[600px] pt-[130px]">
+          <div className="w-255 h-200 relative">
+            <div className="w-255 h-178.75 bg-huiguang bg-cover flex justify-between bg-no-repeat">
+              <div className="w-70 h-150 pt-32.5">
                 {CENTER_LEFT.map((item) => (
                   <div
                     key={item.icon}
-                    className={`${item.icon} bg-no-repeat bg-contain relative h-[85px] w-[250px] mt-[30px]`}
+                    className={`${item.icon} bg-no-repeat bg-contain relative h-21.25 w-62.5 mt-7.5`}
                     style={{ marginLeft: item.ml }}
                   >
-                    <img className="absolute top-[8px] left-[35px]" src={rleftImg} alt="" />
-                    <span className="absolute top-[30px] left-[140px] font-Oswald text-[30px] text-[#ebb53f]">
+                    <img className="absolute top-2 left-8.75" src={rleftImg} alt="" />
+                    <span className="absolute top-7.5 left-35 font-Oswald text-[30px] text-[#ebb53f]">
                       165
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="w-[280px] h-[600px] pt-[130px]">
+              <div className="w-70 h-150 pt-32.5">
                 {CENTER_RIGHT.map((item) => (
                   <div
                     key={item.icon}
-                    className={`${item.icon} bg-no-repeat bg-contain indent-[42px] relative h-[85px] w-[250px] mt-[30px]`}
+                    className={`${item.icon} bg-no-repeat bg-contain indent-10.5 relative h-21.25 w-62.5 mt-7.5`}
                     style={{ marginLeft: item.ml, lineHeight: `${item.leading}px` }}
                   >
-                    <img className="absolute top-0 left-[190px]" src={rlightImg} alt="" />
+                    <img className="absolute top-0 left-47.5" src={rlightImg} alt="" />
                     <span className="font-Oswald text-[30px] text-[#ebb53f]">165</span>
                   </div>
                 ))}
@@ -199,10 +199,10 @@ export default function PartyPage() {
           </div>
 
           {/* 右侧区域 */}
-          <div className="w-[490px] h-[800px]">
-            <div className="h-[380px]">
+          <div className="w-122.5 h-200">
+            <div className="h-95">
               <PanelTitle label="党员结构" flip />
-              <div className="h-[320px] px-[40px] relative">
+              <div className="h-80 px-10 relative">
                 {STRUCTURE_LABELS.map((item) => (
                   <div key={item.name} className={`absolute ${item.pos}`}>
                     <div className="text-[24px] font-YouShe" style={{ color: item.color }}>
@@ -217,21 +217,21 @@ export default function PartyPage() {
               </div>
             </div>
 
-            <div className="h-[420px]">
+            <div className="h-105">
               <PanelTitle label="党的动态" flip />
-              <div className="h-[360px]">
+              <div className="h-90">
                 {NEWS_ROWS.map((row, i) => (
                   <div
                     key={i}
-                    className="bg-dddtBG bg-no-repeat bg-cover w-[500px] text-[16px] text-[#f1f1f1] h-[60px] leading-[60px] inline-flex"
+                    className="bg-dddtBG bg-no-repeat bg-cover w-125 text-[16px] text-[#f1f1f1] h-15 leading-[60px] inline-flex"
                   >
                     <b
-                      className={`text-[18px] w-[120px] text-[#e46262] ${row.icon} indent-[38px] bg-auto bg-no-repeat bg-center`}
+                      className={`text-[18px] w-30 text-[#e46262] ${row.icon} indent-9.5 bg-auto bg-no-repeat bg-center`}
                     >
                       {row.tag}
                     </b>
-                    <div className={`px-[14px] ${row.dateClass}`}>{row.date}</div>
-                    <p className="w-[300px] overflow-hidden text-ellipsis whitespace-nowrap">
+                    <div className={`px-3.5 ${row.dateClass}`}>{row.date}</div>
+                    <p className="w-75 overflow-hidden text-ellipsis whitespace-nowrap">
                       {row.text}
                     </p>
                   </div>
@@ -243,7 +243,7 @@ export default function PartyPage() {
       </div>
 
       {/* 背景 + 底部内容 */}
-      <div className="absolute z-10 text-[#fff] top-0 left-0 bottom-0 right-0">
+      <div className="absolute z-10 text-white inset-0">
         <FrameAnimation seq={SEQUENCES.party} />
       </div>
       <VideoBackground src="/media/BG-grid.mp4" className="absolute bottom-0" />

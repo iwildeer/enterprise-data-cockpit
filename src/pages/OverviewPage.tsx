@@ -45,7 +45,7 @@ const BANK_ROWS = [
   { name: "招商银行", pct: 40, num: "32", color: "#89dcf6", tight: false },
 ]
 
-/** 中间左右两侧的指标牌（ml40 表示原页的 ml-[40px] 缩进位置） */
+/** 中间左右两侧的指标牌（ml40 表示原页的 ml-10 缩进位置） */
 const SIDE_LEFT = [
   { img: d11, label: "资产总额", num: "908", ml40: true },
   { img: d12, label: "利润总额", num: "1448", ml40: false },
@@ -70,21 +70,21 @@ const TOP3_ROWS = [
 export default function OverviewPage() {
   return (
     <DashboardShell stageHeight={750}>
-      <div className="main absolute top-0 left-0 bottom-0 right-0 w-[2000px] h-[750px] flex justify-between z-[99]">
+      <div className="main absolute inset-0 w-500 h-187.5 flex justify-between z-99">
         {/* 左侧区域 */}
-        <div className="w-[510px] h-[750px]">
+        <div className="w-127.5 h-187.5">
           {/* 企业总数 */}
-          <div className="w-[510px] h-[250px]">
-            <div className="w-[510px] h-[60px] bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-[120px] leading-[60px]">
+          <div className="w-127.5 h-62.5">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
               企业总数
             </div>
-            <div className="w-[510px] h-[190px] px-[40px] inline-flex justify-between">
+            <div className="w-127.5 h-47.5 px-10 inline-flex justify-between">
               {COMPANY_STATS.map(({ img, label, num }) => (
-                <div key={label} className="w-[120px] h-[190px] flex flex-col justify-center items-center">
+                <div key={label} className="w-30 h-47.5 flex flex-col justify-center items-center">
                   <img src={img} alt="" />
                   <div className="text-[#f1f1f1] text-[16px] font-PangMenZhengDao">{label}</div>
                   <p className="text-[16px] text-[#f1f1f1]">
-                    <span className="text-[28px] font-Oswald mr-[4px]">{num}</span>亿
+                    <span className="text-[28px] font-Oswald mr-1">{num}</span>亿
                   </p>
                 </div>
               ))}
@@ -92,27 +92,27 @@ export default function OverviewPage() {
           </div>
 
           {/* 收入分析（与经济运行页的总资产周转率为同一图表） */}
-          <div className="w-[510px] h-[250px]">
-            <div className="w-[510px] h-[60px] bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-[120px] leading-[60px]">
+          <div className="w-127.5 h-62.5">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
               收入分析
             </div>
-            <div id="turnoverRate-graph" className="w-[510px] h-[200px]">
+            <div id="turnoverRate-graph" className="w-127.5 h-50">
               <EChart option={buildCubeBarOption()} />
             </div>
           </div>
 
           {/* 资金分布 */}
-          <div className="w-[510px] h-[250px]">
-            <div className="w-[510px] h-[60px] bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-[120px] leading-[60px]">
+          <div className="w-127.5 h-62.5">
+            <div className="w-127.5 h-15 bg-title bg-no-repeat bg-cover font-PangMenZhengDao text-[#f1f1f1] indent-30 leading-[60px]">
               资金分布
             </div>
-            <div className="inline-flex text-[#f1f1f1] h-[200px] w-[510px]">
-              <div id="3d-Pie" className="w-[180px] h-[180px]">
+            <div className="inline-flex text-[#f1f1f1] h-50 w-127.5">
+              <div id="3d-Pie" className="w-45 h-45">
                 <EChart option={buildPie3dOption()} />
               </div>
-              <div className="px-[18px] py-[26px] w-[330px] h-[200px] text-[16px]">
+              <div className="px-4.5 py-6.5 w-82.5 h-50 text-[16px]">
                 {BANK_ROWS.map((row) => (
-                  <p key={row.name} className="float-left w-[50%] h-[50px] leading-[50px] text-[16px]">
+                  <p key={row.name} className="float-left w-1/2 h-12.5 leading-[50px] text-[16px]">
                     {row.name}&nbsp;<b>{row.pct}</b>
                     <sub>%</sub>
                     {row.tight ? null : " "}
@@ -127,34 +127,34 @@ export default function OverviewPage() {
         </div>
 
         {/* 中间区域 */}
-        <div className="w-[980px] h-[750px] relative">
-          <div className="w-[600px] h-[600px] absolute left-[50%] top-[50px] translate-x-[-300px]">
+        <div className="w-245 h-187.5 relative">
+          <div className="w-150 h-150 absolute left-1/2 top-12.5 -translate-x-75">
             {/* 3d地图 */}
-            <div id="3d-globe" className="w-[600px] h-[600px]">
+            <div id="3d-globe" className="w-150 h-150">
               <Globe3D />
             </div>
           </div>
 
           {/* 底部圆弧 */}
-          <div className="w-[980px] h-[400px] absolute top-[430px] left-[300px]">
+          <div className="w-245 h-100 absolute top-107.5 left-75">
             <img src={kvS1} alt="" />
           </div>
 
           {/* 圆环 */}
-          <div style={{ perspective: "500px" }} className="w-[980px] h-[200px] absolute">
+          <div style={{ perspective: "500px" }} className="w-245 h-50 absolute">
             <img style={{ transform: "translate3d(0, 60px, -30px) rotate3d(1, 0, 0, 121deg)" }} src={b1} alt="" />
           </div>
-          <div style={{ perspective: "500px" }} className="w-[980px] h-[200px] absolute">
+          <div style={{ perspective: "500px" }} className="w-245 h-50 absolute">
             <img
-              className="w-[630px]"
+              className="w-157.5"
               style={{ transform: "translate3d(170px, 180px, 40px) rotate3d(1, 0, 0, 121deg)" }}
               src={kvI1}
               alt=""
             />
           </div>
-          <div style={{ perspective: "500px" }} className="w-[980px] h-[200px] absolute">
+          <div style={{ perspective: "500px" }} className="w-245 h-50 absolute">
             <img
-              className="w-[1000px]"
+              className="w-250"
               style={{ transform: "translate3d(0px, 40px, 0px) rotate3d(1, 0, 0, 121deg)" }}
               src={kvS2}
               alt=""
@@ -162,17 +162,17 @@ export default function OverviewPage() {
           </div>
 
           {/* 两侧图片 */}
-          <div className="absolute w-[980px] h-[700px] z-[-1] flex justify-between">
+          <div className="absolute w-245 h-175 -z-1 flex justify-between">
             {/* 左侧 */}
-            <div className="w-[225px] h-[700px] flex flex-col justify-center">
+            <div className="w-56.25 h-175 flex flex-col justify-center">
               {SIDE_LEFT.map(({ img, label, num, ml40 }) => (
                 <div
                   key={label}
-                  className={`${ml40 ? "ml-[40px] " : ""}w-[225px] h-[70px] mb-[36px] relative`}
+                  className={`${ml40 ? "ml-10 " : ""}w-56.25 h-17.5 mb-9 relative`}
                 >
-                  <img className="absolute top-[18px] left-[26px] z-[1]" src={img} alt="" />
+                  <img className="absolute top-4.5 left-6.5 z-1" src={img} alt="" />
                   <img className="absolute" src={d1} alt="" />
-                  <p className="absolute z-[1] font-PangMenZhengDao text-[#f1f1f1] leading-[65px] indent-[78px] w-[225px] h-[70px]">
+                  <p className="absolute z-1 font-PangMenZhengDao text-[#f1f1f1] leading-[65px] indent-19.5 w-56.25 h-17.5">
                     {label}
                     {" "}
                     <span className="text-[20px] font-Oswald">{num}</span>
@@ -181,15 +181,15 @@ export default function OverviewPage() {
               ))}
             </div>
             {/* 右侧 */}
-            <div className="w-[225px] h-[700px] flex flex-col justify-center">
+            <div className="w-56.25 h-175 flex flex-col justify-center">
               {SIDE_RIGHT.map(({ img, label, num, ml40 }) => (
                 <div
                   key={label}
-                  className={`${ml40 ? "ml-[40px] " : ""}w-[225px] h-[70px] mb-[36px] relative`}
+                  className={`${ml40 ? "ml-10 " : ""}w-56.25 h-17.5 mb-9 relative`}
                 >
                   <img className="absolute rotate-180" src={d1} alt="" />
-                  <img className="absolute top-[24px] right-[26px] z-[1]" src={img} alt="" />
-                  <p className="absolute z-[1] font-PangMenZhengDao text-[#f1f1f1] leading-[65px] indent-[20px] w-[225px] h-[70px]">
+                  <img className="absolute top-6 right-6.5 z-1" src={img} alt="" />
+                  <p className="absolute z-1 font-PangMenZhengDao text-[#f1f1f1] leading-[65px] indent-5 w-56.25 h-17.5">
                     {label}
                     {" "}
                     <span className="text-[20px] font-Oswald">{num}</span>
@@ -200,22 +200,22 @@ export default function OverviewPage() {
           </div>
 
           {/* 箭头 */}
-          <div className="absolute w-[100px] h-[346px] top-[20%] left-[-3%] bg-k1 bg-cover bg-no-repeat">
-            <img className="mt-[50%] ml-[-20px]" src={k2Img} alt="" />
+          <div className="absolute w-25 h-86.5 top-1/5 -left-[3%] bg-k1 bg-cover bg-no-repeat">
+            <img className="mt-[50%] -ml-5" src={k2Img} alt="" />
           </div>
-          <div className="absolute w-[100px] rotate-180 h-[346px] top-[20%] right-[-6%] bg-k1 bg-cover bg-no-repeat">
-            <img className="mt-[50%] ml-[-20px]" src={k2Img} alt="" />
+          <div className="absolute w-25 rotate-180 h-86.5 top-1/5 -right-[6%] bg-k1 bg-cover bg-no-repeat">
+            <img className="mt-[50%] -ml-5" src={k2Img} alt="" />
           </div>
         </div>
 
         {/* 右侧区域 */}
-        <div className="w-[510px] h-[750px]">
+        <div className="w-127.5 h-187.5">
           {/* 投资规模趋势 */}
-          <div className="w-[510px] h-[300px]">
-            <div className="relative indent-[240px] leading-[48px] w-[510px] h-[60px] font-PangMenZhengDao text-[#f1f1f1]">
+          <div className="w-127.5 h-75">
+            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
                 src={titleImg}
                 alt=""
               />
@@ -228,40 +228,40 @@ export default function OverviewPage() {
           </div>
 
           {/* 投资项目进展 */}
-          <div className="w-[510px] h-[200px] text-[#f1f1f1]">
-            <div className="relative indent-[240px] leading-[48px] w-[510px] h-[60px] font-PangMenZhengDao text-[#f1f1f1]">
+          <div className="w-127.5 h-50 text-[#f1f1f1]">
+            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
                 src={titleImg}
                 alt=""
               />
               <span>投资项目进展</span>
             </div>
-            <div id="project-progress" className="w-[510px] h-[140px]">
+            <div id="project-progress" className="w-127.5 h-35">
               <EChart option={buildHillOption()} />
             </div>
           </div>
 
           {/* 行业资产TOP3 */}
-          <div className="w-[510px] h-[250px]">
-            <div className="relative indent-[240px] leading-[48px] w-[510px] h-[60px] font-PangMenZhengDao text-[#f1f1f1]">
+          <div className="w-127.5 h-62.5">
+            <div className="relative indent-60 leading-[48px] w-127.5 h-15 font-PangMenZhengDao text-[#f1f1f1]">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
                 src={titleImg}
                 alt=""
               />
               <span>行业资产TOP3</span>
             </div>
 
-            <div className="w-[510px] h-[190px] relative text-[#f1f1f1]">
+            <div className="w-127.5 h-47.5 relative text-[#f1f1f1]">
               {/* 左边图标 */}
               <div className="absolute z-10">
                 {TOP3_ROWS.map(({ Icon, color }, i) => (
                   <svg
                     key={i}
-                    className="mt-[10px] ml-[10px] w-[50px] h-[50px]"
+                    className="mt-2.5 ml-2.5 w-12.5 h-12.5"
                     style={{ color }}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox={i === 1 ? "0 0 32 32" : "0 0 24 24"}
@@ -275,16 +275,16 @@ export default function OverviewPage() {
               <div
                 id="rankList"
                 style={{ width: 510, height: 190 }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
               >
                 <EChart option={buildRankListOption()} />
               </div>
 
               {/* 右边数据 */}
-              <div className="absolute right-[60px] h-[190px]">
+              <div className="absolute right-15 h-47.5">
                 {TOP3_ROWS.map(({ color, value }) => (
-                  <div key={value} className="h-[55px] leading-[55px] text-end">
-                    <span className="text-[26px] font-Oswald mr-[3px]" style={{ color }}>
+                  <div key={value} className="h-13.75 leading-[55px] text-end">
+                    <span className="text-[26px] font-Oswald mr-0.75" style={{ color }}>
                       {value}
                     </span>
                     万元
@@ -297,8 +297,8 @@ export default function OverviewPage() {
       </div>
 
       {/* 背景 */}
-      <div className="w-[2000px] h-[750px] relative">
-        <div className="absolute top-0 left-0 bottom-0 right-0" style={{ perspective: "500px" }}>
+      <div className="w-500 h-187.5 relative">
+        <div className="absolute inset-0" style={{ perspective: "500px" }}>
           <VideoBackground src="/media/BG_26.mp4" style={{ transform: "rotate3d(1, 0, 0, 70deg)" }} />
         </div>
       </div>

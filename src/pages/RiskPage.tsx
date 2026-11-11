@@ -16,7 +16,7 @@ import zqchIcon4 from "../assets/images/main/6/zqchIcon4.png"
 import titleImg from "../assets/images/title.png"
 
 /** 行业预警分析顶部三个行业 */
-// 工业 的 p 在原页多出 w-[120px] h-[40px] text-center（另两项没有），保真保留
+// 工业 的 p 在原页多出 w-30 h-10 text-center（另两项没有），保真保留
 const INDUSTRIES = [
   { img: gongYeIcon, num: "178", label: "工业", color: "#eae039", box: true },
   { img: shangMaoIcon, num: "203", label: "商贸", color: "#7bf7d4", box: false },
@@ -70,32 +70,32 @@ export default function RiskPage() {
   return (
     <DashboardShell stageHeight={800}>
       {/* 主体内容区域 */}
-      <div className="w-[2000px] h-[800px] top-0 left-0 absolute z-20">
-        <div className="relative w-[2000px] h-[800px] inline-flex">
+      <div className="w-500 h-200 top-0 left-0 absolute z-20">
+        <div className="relative w-500 h-200 inline-flex">
           {/* 左侧区域 */}
-          <div className="w-[490px] h-[800px] text-[#f1f1f1]">
+          <div className="w-122.5 h-200 text-[#f1f1f1]">
             {/* 预警变动趋势 */}
-            <div className="w-[490px] h-[360px]">
-              <div className="relative h-[60px] leading-[50px]">
-                <img className="absolute top-0 left-0 h-[60px]" src={titleImg} alt="" />
-                <span className="font-PangMenZhengDao ml-[120px]">预警变动趋势</span>
+            <div className="w-122.5 h-90">
+              <div className="relative h-15 leading-[50px]">
+                <img className="absolute top-0 left-0 h-15" src={titleImg} alt="" />
+                <span className="font-PangMenZhengDao ml-30">预警变动趋势</span>
               </div>
-              <div className="w-[490px] h-[300px]">
-                <div id="changTrends" className="w-[490px] h-[300px]">
+              <div className="w-122.5 h-75">
+                <div id="changTrends" className="w-122.5 h-75">
                   <EChart option={buildChangTrendsOption()} />
                 </div>
               </div>
             </div>
 
             {/* 行业预警分析 */}
-            <div className="w-[490px] h-[440px]">
-              <div className="w-[490px] h-[160px] flex">
+            <div className="w-122.5 h-110">
+              <div className="w-122.5 h-40 flex">
                 {INDUSTRIES.map(({ img, num, label, color, box }) => (
-                  <div key={label} className="flex-1 h-[160px] flex flex-col items-center justify-center">
+                  <div key={label} className="flex-1 h-40 flex flex-col items-center justify-center">
                     <span className="font-Oswald text-[24px]">{num}</span>
-                    <img className="w-[100px] h-[100px]" src={img} alt="" />
+                    <img className="w-25 h-25" src={img} alt="" />
                     <p
-                      className={`font-PangMenZhengDao text-[24px] ${box ? "w-[120px] h-[40px] text-center" : ""}`}
+                      className={`font-PangMenZhengDao text-[24px] ${box ? "w-30 h-10 text-center" : ""}`}
                       style={{ color }}
                     >
                       {label}
@@ -104,23 +104,23 @@ export default function RiskPage() {
                 ))}
               </div>
 
-              <div className="w-[490px] h-[280px] inline-flex gap-[14px] justify-between px-[35px]">
+              <div className="w-122.5 h-70 inline-flex gap-3.5 justify-between px-8.75">
                 {INDUSTRY_COLUMNS.map(({ bg, gauges }) => (
-                  <div key={bg} className={`w-[140px] h-[280px] pt-[60px] ${bg} bg-no-repeat bg-cover`}>
+                  <div key={bg} className={`w-35 h-70 pt-15 ${bg} bg-no-repeat bg-cover`}>
                     {gauges.map(({ value, color, num, label }, i) => (
                       <div
                         key={label}
-                        className={`w-[140px] h-[70px] px-[12px] flex justify-between items-center ${
-                          i > 0 ? "mt-[50px]" : ""
+                        className={`w-35 h-17.5 px-3 flex justify-between items-center ${
+                          i > 0 ? "mt-12.5" : ""
                         }`}
                       >
-                        <div className="w-[60px] h-[60px]">
+                        <div className="w-15 h-15">
                           <EChart option={buildRingGaugeOption(value, color)} />
                         </div>
                         {/* nowrap：旧页字体栈下“超预警线”恰好单行，新字体栈差 ~0.4px 会折行，按旧页视觉固定单行 */}
                         <div className="text-[14px] text-[#f1f1f1] whitespace-nowrap">
                           <p>
-                            <span className="font-Oswald text-[20px] mr-[4px]">{num}</span>家
+                            <span className="font-Oswald text-[20px] mr-1">{num}</span>家
                           </p>
                           <p>{label}</p>
                         </div>
@@ -133,33 +133,33 @@ export default function RiskPage() {
           </div>
 
           {/* 中间区域 */}
-          <div className="w-[1020px] h-[800px] relative">
-            <div className="absolute left-0 top-[570px] w-[160px] h-[52px] leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
+          <div className="w-255 h-200 relative">
+            <div className="absolute left-0 top-142.5 w-40 h-13 leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
               <span className="font-PangMenZhengDao">
                 非流动比率 <b className="font-YouShe">1.1%</b>
               </span>
             </div>
-            <div className="absolute top-[680px] left-[220px] w-[160px] h-[52px] leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
+            <div className="absolute top-170 left-55 w-40 h-13 leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
               <span className="font-PangMenZhengDao">
                 资产负债率 <b className="font-YouShe">1.2%</b>
               </span>
             </div>
-            <div className="absolute top-[720px] left-[450px] w-[160px] h-[52px] leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
+            <div className="absolute top-180 left-112.5 w-40 h-13 leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
               <span className="font-PangMenZhengDao">
                 流动比率 <b className="font-YouShe">8.1%</b>
               </span>
             </div>
-            <div className="absolute top-[680px] left-[650px] w-[160px] h-[52px] leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
+            <div className="absolute top-170 left-162.5 w-40 h-13 leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
               <span className="font-PangMenZhengDao">
                 担保余额 <b className="font-YouShe">314</b>
               </span>
             </div>
-            <div className="absolute right-0 top-[570px] w-[160px] h-[52px] leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
+            <div className="absolute right-0 top-142.5 w-40 h-13 leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
               <span className="font-PangMenZhengDao">
                 净利润 <b className="font-YouShe">20.1%</b>
               </span>
             </div>
-            <div className="absolute right-0 top-[370px] w-[160px] h-[52px] leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
+            <div className="absolute right-0 top-92.5 w-40 h-13 leading-[52px] bg-kv-a1 bg-no-repeat bg-contain text-center text-[#f1f1f1]">
               <span className="font-PangMenZhengDao">
                 现金流入 <b className="font-YouShe">1000</b>
               </span>
@@ -167,26 +167,26 @@ export default function RiskPage() {
           </div>
 
           {/* 右侧区域 */}
-          <div className="w-[490px] h-[800px] text-[#f1f1f1]">
+          <div className="w-122.5 h-200 text-[#f1f1f1]">
             {/* 财务能力预警 */}
-            <div className="w-[490px] h-[360px]">
-              <div className="h-[60px] text-[#f1f1f1] leading-[45px] indent-[240px]">
+            <div className="w-122.5 h-90">
+              <div className="h-15 text-[#f1f1f1] leading-[45px] indent-60">
                 {/* 原页此处 img 只有 absolute，锚定到整个舞台左上角（视觉怪癖，保真保留） */}
                 <img className="absolute" style={{ transform: "rotate3d(0, 1, 0, 180deg)" }} src={titleImg} alt="" />
                 <span className="font-PangMenZhengDao text-[20px]">财务能力预警</span>
               </div>
-              <div className="w-[490px] h-[300px]">
-                <div id="radarChart" className="w-[320px] h-[240px] mt-[20px] float-left">
+              <div className="w-122.5 h-75">
+                <div id="radarChart" className="w-80 h-60 mt-5 float-left">
                   <EChart option={buildRadarOption()} />
                 </div>
-                <div className="w-[170px] h-[240px] float-left mt-[20px] pr-[20px]">
+                <div className="w-42.5 h-60 float-left mt-5 pr-5">
                   {RADAR_LEGEND.map(({ label, warn, ctrl, leading60 }) => (
                     <div
                       key={label}
-                      className={`h-[40px] text-[18px] flex justify-between ${leading60 ? "leading-[60px]" : "leading-[40px]"}`}
+                      className={`h-10 text-[18px] flex justify-between ${leading60 ? "leading-[60px]" : "leading-[40px]"}`}
                     >
                       {label}
-                      <span className="text-[#f0a1a8] font-Oswald mx-[5px]">{warn}</span>
+                      <span className="text-[#f0a1a8] font-Oswald mx-1.25">{warn}</span>
                       <span className="text-[yellow] font-Oswald">{ctrl}</span>
                     </div>
                   ))}
@@ -195,23 +195,23 @@ export default function RiskPage() {
             </div>
 
             {/* 债券偿还 */}
-            <div className="w-[490px] h-[420px]">
-              <div className="h-[60px] text-[#f1f1f1] leading-[45px] indent-[240px]">
+            <div className="w-122.5 h-105">
+              <div className="h-15 text-[#f1f1f1] leading-[45px] indent-60">
                 <img className="absolute" style={{ transform: "rotate3d(0, 1, 0, 180deg)" }} src={titleImg} alt="" />
                 <span className="font-PangMenZhengDao text-[20px]">债券偿还</span>
               </div>
-              <div className="w-[470px] h-[210px]">
-                <div className="w-[470px] inline-flex h-[36px] bg-zqchBG2 bg-no-repeat bg-contain bg-[center_bottom_10px]">
-                  <div className="w-[25%] text-start font-Oswald inline-flex">
+              <div className="w-117.5 h-52.5">
+                <div className="w-117.5 inline-flex h-9 bg-zqchBG2 bg-no-repeat bg-contain bg-[center_bottom_10px]">
+                  <div className="w-1/4 text-start font-Oswald inline-flex">
                     <img src={zqchIcon1} alt="" />
                     月内到期
                   </div>
-                  <div className="w-[25%] text-center font-Oswald text-[24px] text-[#efef00]">142.8</div>
-                  <div className="w-[20%] text-center font-Oswald text-[24px] text-[#efef00]">142.8</div>
+                  <div className="w-1/4 text-center font-Oswald text-[24px] text-[#efef00]">142.8</div>
+                  <div className="w-1/5 text-center font-Oswald text-[24px] text-[#efef00]">142.8</div>
                   <div className="w-[15%] text-center font-Oswald text-[24px] text-[#efef00]">100%</div>
                   <div className="w-[15%] text-center font-Oswald text-[24px] text-[#efef00]">20</div>
                 </div>
-                <table className="w-[470px] h-[174px] text-[16px]">
+                <table className="w-117.5 h-43.5 text-[16px]">
                   <thead>
                     <tr>
                       <th className="font-normal"></th>
@@ -224,9 +224,9 @@ export default function RiskPage() {
                   <tbody className="text-center">
                     {["所属集团", "所属集团所属", "所属集团所属集团"].map((name) => (
                       <tr key={name}>
-                        <td className="text-start w-[25%]">{name}</td>
-                        <td className="w-[25%]">24.3</td>
-                        <td className="w-[20%]">24.3</td>
+                        <td className="text-start w-1/4">{name}</td>
+                        <td className="w-1/4">24.3</td>
+                        <td className="w-1/5">24.3</td>
                         <td className="w-[15%]">24.3%</td>
                         <td className="w-[15%]">5</td>
                       </tr>
@@ -235,18 +235,18 @@ export default function RiskPage() {
                 </table>
               </div>
 
-              <div className="w-[470px] h-[150px] flex flex-col">
+              <div className="w-117.5 h-37.5 flex flex-col">
                 {BOND_ROWS.map(({ icon, label }) => (
                   <div
                     key={label}
-                    className="flex-1 h-[50px] leading-[50px] inline-flex bg-zqchBG2 bg-no-repeat bg-contain bg-[center_bottom_10px]"
+                    className="flex-1 h-12.5 leading-[50px] inline-flex bg-zqchBG2 bg-no-repeat bg-contain bg-[center_bottom_10px]"
                   >
-                    <div className="w-[25%] text-start font-Oswald inline-flex">
-                      <img className="w-[36px] h-[36px]" src={icon} alt="" />
+                    <div className="w-1/4 text-start font-Oswald inline-flex">
+                      <img className="w-9 h-9" src={icon} alt="" />
                       {label}
                     </div>
-                    <div className="w-[25%] text-center font-Oswald text-[24px] text-[#62d9fd]">142.8</div>
-                    <div className="w-[20%] text-center font-Oswald text-[24px] text-[#62d9fd]">142.8</div>
+                    <div className="w-1/4 text-center font-Oswald text-[24px] text-[#62d9fd]">142.8</div>
+                    <div className="w-1/5 text-center font-Oswald text-[24px] text-[#62d9fd]">142.8</div>
                     <div className="w-[15%] text-center font-Oswald text-[24px] text-[#62d9fd]">100%</div>
                     <div className="w-[15%] text-center font-Oswald text-[24px] text-[#62d9fd]">20</div>
                   </div>
@@ -259,10 +259,10 @@ export default function RiskPage() {
 
       {/* 背景：帧动画（z-10）+ 底部网格视频（z-2，与旧页同为 z-10 容器的兄弟节点，
           视频画在帧动画之下，不能放进容器内） */}
-      <div className="absolute z-10 text-[#fff] top-0 left-0 bottom-0 right-0">
+      <div className="absolute z-10 text-white inset-0">
         <FrameAnimation seq={SEQUENCES.risk} />
       </div>
-      <VideoBackground className="absolute bottom-0 z-[2]" src="/media/BG-grid.mp4" />
+      <VideoBackground className="absolute bottom-0 z-2" src="/media/BG-grid.mp4" />
     </DashboardShell>
   )
 }

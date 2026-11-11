@@ -70,20 +70,20 @@ const ANOMALIES = [
 export default function TripleOnePage() {
   return (
     <DashboardShell stageHeight={750}>
-      <div className="absolute top-0 left-0 bottom-0 text-[#f1f1f1] right-0 inline-flex w-[2000px] h-[750px] z-[99]">
+      <div className="absolute inset-0 text-[#f1f1f1] inline-flex w-500 h-187.5 z-99">
         {/* 左侧区域 */}
-        <div className="w-[500px] h-[750px] pl-[20px]">
+        <div className="w-125 h-187.5 pl-5">
           {/* 重大会议分析 */}
-          <div className="h-[360px]">
-            <div className="h-[60px] relative leading-[40px] indent-[120px]">
-              <img className="absolute top-0 left-0 bottom-0 right-0" src={titleImg} alt="" />
+          <div className="h-90">
+            <div className="h-15 relative leading-[40px] indent-30">
+              <img className="absolute inset-0" src={titleImg} alt="" />
               <span className="font-PangMenZhengDao text-[22px]">重大会议分析</span>
             </div>
-            <div className="h-[300px] relative">
-              <div id="nestRing" className="absolute w-[480px] h-[300px]">
+            <div className="h-75 relative">
+              <div id="nestRing" className="absolute w-120 h-75">
                 <EChart option={buildNestedRingsOption()} />
               </div>
-              <div className="absolute text-center w-[100px] h-[100px] top-[100px] left-[190px]">
+              <div className="absolute text-center w-25 h-25 top-25 left-47.5">
                 <p>
                   <span className="font-Oswald text-[34px]">279</span>次
                 </p>
@@ -93,18 +93,18 @@ export default function TripleOnePage() {
           </div>
 
           {/* 事项统计情况 */}
-          <div className="h-[390px]">
-            <div className="h-[60px] relative leading-[40px] indent-[120px]">
-              <img className="absolute top-0 left-0 bottom-0 right-0" src={titleImg} alt="" />
+          <div className="h-97.5">
+            <div className="h-15 relative leading-[40px] indent-30">
+              <img className="absolute inset-0" src={titleImg} alt="" />
               <span className="font-PangMenZhengDao text-[22px]">事项统计情况</span>
             </div>
-            <div className="h-[330px] bg-indigo-600 relative">
-              <div id="eventStatistics" className="w-[100%] h-[330px] absolute">
+            <div className="h-82.5 bg-indigo-600 relative">
+              <div id="eventStatistics" className="w-full h-82.5 absolute">
                 <EChart option={buildEventStatisticsOption()} />
               </div>
-              <ul className="absolute pt-[36px] right-[14px] text-[#f1f1f1] text-[16px] justify-around h-full">
+              <ul className="absolute pt-9 right-3.5 text-[#f1f1f1] text-[16px] justify-around h-full">
                 {EVENT_COUNTS.map((count, i) => (
-                  <li key={i} className="h-[40px] leading-[40px]">
+                  <li key={i} className="h-10 leading-[40px]">
                     {count} &nbsp; {EVENT_TIMES[i]}
                   </li>
                 ))}
@@ -114,15 +114,15 @@ export default function TripleOnePage() {
         </div>
 
         {/* 中间区域 */}
-        <div className="w-[1000px] h-[750px]">
-          <div className="w-[1000px] px-[36px] mt-[580px] text-[#f1f1f1] h-[110px] inline-flex">
+        <div className="w-250 h-187.5">
+          <div className="w-250 px-9 mt-145 text-[#f1f1f1] h-27.5 inline-flex">
             {BOTTOM_CARDS.map((bg) => (
-              <div key={bg} className={`flex-1 flex items-center w-[228px] h-[110px] ${bg} bg-no-repeat bg-cover`}>
-                <div className="ml-[90px]">
-                  <div className="h-[45px] leading-[60px]">
+              <div key={bg} className={`flex-1 flex items-center w-57 h-27.5 ${bg} bg-no-repeat bg-cover`}>
+                <div className="ml-22.5">
+                  <div className="h-11.25 leading-[60px]">
                     <span className="font-Oswald text-[24px]">1,438</span>项 &nbsp; 27%
                   </div>
-                  <p className="font-PangMenZhengDao pt-[10px] h-[55px] leading-[55px]">会议统计</p>
+                  <p className="font-PangMenZhengDao pt-2.5 h-13.75 leading-[55px]">会议统计</p>
                 </div>
               </div>
             ))}
@@ -130,33 +130,33 @@ export default function TripleOnePage() {
         </div>
 
         {/* 右侧区域 */}
-        <div className="w-[500px] h-[750px] pr-[20px]">
+        <div className="w-125 h-187.5 pr-5">
           {/* 议题统计情况 */}
-          <div className="h-[330px]">
-            <div className="h-[60px] relative leading-[40px] text-right">
+          <div className="h-82.5">
+            <div className="h-15 relative leading-[40px] text-right">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
                 src={titleImg}
                 alt=""
               />
-              <span className="mr-[120px] font-PangMenZhengDao text-[22px]">议题统计情况</span>
+              <span className="mr-30 font-PangMenZhengDao text-[22px]">议题统计情况</span>
             </div>
-            <div className="h-[270px]">
+            <div className="h-67.5">
               {TOPIC_ROWS.map(({ bg, numColor, label, cells }) => (
-                <div key={label} className="h-[135px] inline-flex">
-                  <div className={`w-[120px] h-[120px] mr-[20px] text-center ${bg} bg-contain bg-no-repeat`}>
-                    <p className="mt-[50px] h-[30px] leading-[30px] text-[24px] font-Oswald" style={{ color: numColor }}>
+                <div key={label} className="h-33.75 inline-flex">
+                  <div className={`w-30 h-30 mr-5 text-center ${bg} bg-contain bg-no-repeat`}>
+                    <p className="mt-12.5 h-7.5 leading-[30px] text-[24px] font-Oswald" style={{ color: numColor }}>
                       1009
                     </p>
                   </div>
                   <div>
                     <p>{label}</p>
-                    <div className="flex justify-around gap-[16px]">
+                    <div className="flex justify-around gap-4">
                       {cells.map(({ name, num, color }) => (
-                        <div key={name} className="w-[100px] h-[90px] bg-xydbBG bg-no-repeat bg-contain text-center">
-                          <p className="h-[40px] leading-[40px]">{name}</p>
-                          <p className="h-[50px] leading-[50px] font-Oswald text-[24px]" style={{ color }}>
+                        <div key={name} className="w-25 h-22.5 bg-xydbBG bg-no-repeat bg-contain text-center">
+                          <p className="h-10 leading-[40px]">{name}</p>
+                          <p className="h-12.5 leading-[50px] font-Oswald text-[24px]" style={{ color }}>
                             {num}
                           </p>
                         </div>
@@ -169,32 +169,32 @@ export default function TripleOnePage() {
           </div>
 
           {/* 法律审核情况 */}
-          <div className="h-[220px]">
-            <div className="h-[60px] relative leading-[40px] text-right">
+          <div className="h-55">
+            <div className="h-15 relative leading-[40px] text-right">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
                 src={titleImg}
                 alt=""
               />
-              <span className="mr-[120px] font-PangMenZhengDao text-[22px]">法律审核情况</span>
+              <span className="mr-30 font-PangMenZhengDao text-[22px]">法律审核情况</span>
             </div>
-            <div className="h-[160px] relative">
-              <div id="valprogressbar" className="w-[480px] h-[160px] absolute">
+            <div className="h-40 relative">
+              <div id="valprogressbar" className="w-120 h-40 absolute">
                 <EChart option={buildValprogressbarOption()} />
               </div>
-              <div className="absolute top-[25px]">
+              <div className="absolute top-6.25">
                 {LAW_ICONS.map(({ Icon, viewBox, color }) => (
-                  <div key={color} className="w-[40px] h-[40px] flex justify-center items-center">
-                    <svg className="w-[26px] h-[26px]" style={{ color }} viewBox={viewBox}>
+                  <div key={color} className="w-10 h-10 flex justify-center items-center">
+                    <svg className="w-6.5 h-6.5" style={{ color }} viewBox={viewBox}>
                       <Icon />
                     </svg>
                   </div>
                 ))}
               </div>
-              <div className="absolute right-0 top-[30px]">
+              <div className="absolute right-0 top-7.5">
                 {LAW_PCTS.map((pct, i) => (
-                  <div key={i} className="h-[40px] font-Oswald">
+                  <div key={i} className="h-10 font-Oswald">
                     {pct}
                   </div>
                 ))}
@@ -203,25 +203,25 @@ export default function TripleOnePage() {
           </div>
 
           {/* 指标异常 */}
-          <div className="h-[200px]">
-            <div className="h-[60px] relative leading-[40px] text-right">
+          <div className="h-50">
+            <div className="h-15 relative leading-[40px] text-right">
               <img
                 style={{ transform: "rotate3d(0, 1, 0, 180deg)" }}
-                className="absolute top-0 left-0 bottom-0 right-0"
+                className="absolute inset-0"
                 src={titleImg}
                 alt=""
               />
-              <span className="mr-[120px] font-PangMenZhengDao text-[22px]">指标异常</span>
+              <span className="mr-30 font-PangMenZhengDao text-[22px]">指标异常</span>
             </div>
-            <div className="h-[140px]">
-              <ul className="w-[480px] h-[140px] flex justify-around items-center">
+            <div className="h-35">
+              <ul className="w-120 h-35 flex justify-around items-center">
                 {ANOMALIES.map(({ num, label }) => (
                   <li key={label} className="text-center flex-1">
-                    <div className="font-Oswald text-[#cec122] text-[20px] w-[50px] h-[50px] leading-[50px] rounded-[999px] border border-red-100">
+                    <div className="font-Oswald text-[#cec122] text-[20px] w-12.5 h-12.5 leading-[50px] rounded-full border border-red-100">
                       {num}
                     </div>
-                    <div className="h-[40px]"></div>
-                    <p className="text-[15px] h-[45px]">{label}</p>
+                    <div className="h-10"></div>
+                    <p className="text-[15px] h-11.25">{label}</p>
                   </li>
                 ))}
               </ul>
@@ -231,11 +231,11 @@ export default function TripleOnePage() {
       </div>
 
       {/* 背景：透视视频 + 帧动画 */}
-      <div className="w-[2000px] h-[750px] relative">
-        <div className="absolute top-0 left-0 bottom-0 right-0" style={{ perspective: "500px" }}>
+      <div className="w-500 h-187.5 relative">
+        <div className="absolute inset-0" style={{ perspective: "500px" }}>
           <VideoBackground src="/media/BG_26.mp4" style={{ transform: "rotate3d(1, 0, 0, 70deg)" }} />
         </div>
-        <div className="absolute text-[#fff] top-0 left-0 bottom-0 z-10 right-0">
+        <div className="absolute text-white inset-0 z-10">
           <FrameAnimation seq={SEQUENCES.triple} />
         </div>
       </div>

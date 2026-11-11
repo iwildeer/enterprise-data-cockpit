@@ -13,10 +13,10 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
 export function SiteHeader() {
   return (
     <header
-      className="inline-flex justify-between w-[2000px] h-[91px] bg-cover bg-center font-PangMenZhengDao text-[#f1f1f1]"
+      className="inline-flex justify-between w-500 h-22.75 bg-cover bg-center font-PangMenZhengDao text-[#f1f1f1]"
       style={{ backgroundImage: `url(${headerBg})` }}
     >
-      <div className="inline-flex justify-between w-[510px] text-[26px] py-1.5 px-[30px] text-[#4e769f]">
+      <div className="inline-flex justify-between w-127.5 text-[26px] py-1.5 px-7.5 text-[#4e769f]">
         {NAV_LEFT.map((item, i) => (
           <span key={item.path} className="h-10" style={{ marginTop: [0, 10, 25][i] }}>
             <NavLink to={item.path} className={linkClass} end={item.path === "/"}>
@@ -25,10 +25,10 @@ export function SiteHeader() {
           </span>
         ))}
       </div>
-      <div className="h-[60px] leading-[60px] text-[40px] text-[#ddf7ff]">
+      <div className="h-15 leading-[60px] text-[40px] text-[#ddf7ff]">
         数字企业大数据监管平台
       </div>
-      <div className="inline-flex justify-between w-[510px] text-[26px] py-1.5 px-[30px] text-[#4e769f]">
+      <div className="inline-flex justify-between w-127.5 text-[26px] py-1.5 px-7.5 text-[#4e769f]">
         {NAV_RIGHT.map((item, i) => (
           <span key={item.path} className="h-10" style={{ marginTop: [25, 10, 0][i] }}>
             <NavLink to={item.path} className={linkClass}>

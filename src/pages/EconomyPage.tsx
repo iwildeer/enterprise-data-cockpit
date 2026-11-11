@@ -36,9 +36,9 @@ const RANK_ICONS = [
 export default function EconomyPage() {
   return (
     <DashboardShell stageHeight={750}>
-      <div className="absolute inset-0 z-[99] flex">
+      <div className="absolute inset-0 z-99 flex">
         {/* 主体左侧区域 */}
-        <div className="flex-1 h-[750px]">
+        <div className="flex-1 h-187.5">
           {/* 资产负债率 */}
           <div>
             <div className={s.titleL}>资产负债率</div>
@@ -67,7 +67,7 @@ export default function EconomyPage() {
             <div className={s.titleL}>总资产周转率</div>
             <div className={s.leftContent}>
               {/* eCharts 图表 */}
-              <div className="h-[200px] w-[510px]">
+              <div className="h-50 w-127.5">
                 <EChart option={buildCubeBarOption()} />
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function EconomyPage() {
           <div>
             <div className={s.titleL}>银行账户分布</div>
             <div className={s.leftContent}>
-              <div className="h-[180px] w-[180px]">
+              <div className="h-45 w-45">
                 <EChart option={buildPie3dOption()} />
               </div>
               <div className={s.leftContentR}>
@@ -91,7 +91,7 @@ export default function EconomyPage() {
           </div>
         </div>
         {/* 主体中间区域 */}
-        <div className="h-[750px] w-[980px] relative">
+        <div className="h-187.5 w-245 relative">
           <div className={`${s.panel} ${s.topL}`}>1666</div>
           <div className={`${s.panel} ${s.bottomL}`}>1666</div>
           <div className={`${s.panel} ${s.cen}`}>1666</div>
@@ -101,7 +101,7 @@ export default function EconomyPage() {
           <div className={`${s.arc} ${s.rightArc}`}></div>
         </div>
         {/* 主体右侧区域 */}
-        <div className="flex-1 h-[750px]">
+        <div className="flex-1 h-187.5">
           <div className={s.rightContentTop}>
             <div className={s.rightContentTitle}>
               <img src={titleImg} alt="" />
@@ -129,7 +129,7 @@ export default function EconomyPage() {
           </div>
           <div className={s.rightContentCenter}>
             {/* 排行榜图表 */}
-            <div className="h-[210px] w-[510px]">
+            <div className="h-52.5 w-127.5">
               <EChart option={buildRankListOption()} />
             </div>
             <div className={s.rankListInfo}>
@@ -158,7 +158,7 @@ export default function EconomyPage() {
               <span>收入分析</span>
             </div>
             {/* 双折线图表 */}
-            <div className="h-[250px] w-[510px]">
+            <div className="h-62.5 w-127.5">
               <EChart option={buildDoubleDiscountOption()} />
             </div>
           </div>
@@ -166,8 +166,8 @@ export default function EconomyPage() {
       </div>
 
       {/* 背景 */}
-      <div className="relative h-[750px] w-[2000px]">
-        <div className="absolute inset-0 z-[9]">
+      <div className="relative h-187.5 w-500">
+        <div className="absolute inset-0 z-9">
           <FrameAnimation seq={SEQUENCES.economy} />
         </div>
         <div style={{ perspective: "500px" }}>
