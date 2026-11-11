@@ -1,17 +1,19 @@
+/* 字体已按项目用字子集化（scripts/subset-fonts.py，4.4MB → ~118KB）。
+   改动页面文案后需重跑该脚本，否则新字符回退系统字体。TTF 原件保留作再生成源。 */
 @font-face {
   font-family: "PangMenZhengDao";
-  src: url("../assets/fonts/PangMenZhengDao.ttf") format("truetype");
+  src: url("../assets/fonts/PangMenZhengDao.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: "YouShe";
-  src: url("../assets/fonts/YouShe.ttf") format("truetype");
+  src: url("../assets/fonts/YouShe.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Oswald";
-  src: url("../assets/fonts/Oswald.ttf") format("truetype");
+  src: url("../assets/fonts/Oswald.woff2") format("woff2");
   font-display: swap;
 }
